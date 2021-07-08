@@ -3,6 +3,7 @@ from bottle import request, HTTPResponse, parse_auth
 
 def setup_auth():
   if os.environ.get("BASIC_AUTH_USER", "") == "" or os.environ.get("BASIC_AUTH_PASS", "") == "":
+    print("ERROR : BASIC_AUTH_USER or BASIC_AUTH_PASS is empty")
     sys.exit()
 
 def invalid_request_response():
